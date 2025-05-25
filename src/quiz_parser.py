@@ -119,7 +119,7 @@ class QuizParser:
         
         # Najpierw sprawdź pytania wielokrotnego wyboru (ABCD)
         # Wzorzec dla pytań ABCD
-        abcd_pattern = r'(?:Q:|##|\*\*)?(.+?)(?:\*\*)?\n(?:A[).\]]\s*(.+?)\n)?(?:B[).\]]\s*(.+?)\n)?(?:C[).\]]\s*(.+?)\n)?(?:D[).\]]\s*(.+?)\n)?(?:Answer:|Odpowiedź:|Poprawna:|Correct:)\s*([A-D,\s]+)(?:\n|$)'
+        abcd_pattern = r'Q:\s*(.+?)\n(?:A[).\]]\s*(.+?)\n)(?:B[).\]]\s*(.+?)\n)(?:C[).\]]\s*(.+?)\n)(?:D[).\]]\s*(.+?)\n)(?:Answer:|Odpowiedź:|Poprawna:|Correct:)\s*([A-D,\s]+)(?:\n\n|\n$|$)'
         
         abcd_matches = re.findall(abcd_pattern, content, re.MULTILINE | re.DOTALL)
         
@@ -180,13 +180,13 @@ class QuizParser:
         # Wzorce dla pytań tekstowych
         patterns = [
             # Format: Q: pytanie\nA: odpowiedź
-            r'Q:\s*(.+?)\nA:\s*(.+?)(?=\n\n|Q:|$)',
+            r'Q:\s*(.+?)\nA:\s*(.+?)(?=\nQ:|\n\n|\Z)',
             # Format: ## pytanie\nanswer
-            r'##\s*(.+?)\n(.+?)(?=\n##|\n\n|$)',
+            r'##\s*(.+?)\n(.+?)(?=\n##|\n\n|\Z)',
             # Format: **pytanie**\nodpowiedź
-            r'\*\*(.+?)\*\*\n(.+?)(?=\n\*\*|\n\n|$)',
+            r'\*\*(.+?)\*\*\n(.+?)(?=\n\*\*|\n\n|\Z)',
             # Format: pytanie?\nodpowiedź
-            r'(.+\?)\n(.+?)(?=\n.+\?|\n\n|$)'
+            r'(.+\?)\n(.+?)(?=\n.+\?|\n\n|\Z)'
         ]
         
         for pattern in patterns:

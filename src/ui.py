@@ -250,7 +250,7 @@ class TerminalUI:
             print(f"⏱️  Czas odpowiedzi: {response_time:.2f}s")
             
             questions_count += 1
-            time.sleep(2)
+            time.sleep(5)
         
         # Pokaż statystyki sesji
         self.show_session_results()
@@ -395,7 +395,7 @@ class TerminalUI:
         self.print_header("O Aplikacji")
         
         print("\n🎓 ZakuZaku - Aplikacja Edukacyjna")
-        print("📅 Wersja 1.0")
+        print("📅 Wersja 1.1")
         print("\n📋 Funkcje:")
         print("   • System inteligentnych powtórek (SRS)")
         print("   • Obsługa plików JSON i Markdown")
