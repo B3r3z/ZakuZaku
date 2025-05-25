@@ -1,0 +1,48 @@
+{
+  "title": "Demo Quiz ABCD",
+  "description": "Przykład quizu z pytaniami wielokrotnego wyboru",
+  "questions": [
+    {
+      "id": "demo_1",
+      "question": "Która z następujących operacji zwraca typ boolean w Pythonie?",
+      "options": ["print()", "len()", "type()", "isinstance()"],
+      "answer": "isinstance()",
+      "type": "single_choice",
+      "category": "python"
+    },
+    {
+      "id": "demo_2", 
+      "question": "Które z poniższych są typami danych w Pythonie?",
+      "options": ["int", "string", "boolean", "array"],
+      "correct_answers": ["int", "boolean"],
+      "answer": "int, boolean",
+      "type": "multiple_choice",
+      "category": "python"
+    },
+    {
+      "id": "demo_3",
+      "question": "Co oznacza skrót HTTP?",
+      "options": ["HyperText Transfer Protocol", "High Tech Transfer Protocol", "Home Tool Transfer Protocol", "Host Transfer Text Protocol"],
+      "answer": "HyperText Transfer Protocol", 
+      "type": "single_choice",
+      "category": "networking"
+    },
+    {
+      "id": "demo_4",
+      "question": "Które z poniższych są popularnymi systemami zarządzania bazami danych?",
+      "options": ["MySQL", "PostgreSQL", "Redis", "Bootstrap"],
+      "correct_answers": ["MySQL", "PostgreSQL", "Redis"],
+      "answer": "MySQL, PostgreSQL, Redis",
+      "type": "multiple_choice",
+      "category": "databases"
+    },
+    {
+      "id": "demo_5",
+      "question": "Jak nazywa się proces konwersji kodu źródłowego na kod maszynowy?",
+      "options": ["Interpretacja", "Kompilacja", "Debugowanie", "Refaktoryzacja"],
+      "answer": "Kompilacja",
+      "type": "single_choice", 
+      "category": "programming"
+    }
+  ]
+}
